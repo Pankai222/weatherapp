@@ -12,9 +12,10 @@
 <div class="col-lg-9">
     <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-200">
+            <div class="card h-200 border-secondary">
                 <div class="card-body">
-                    <h4 class="card-title" th:text="${'Current weather for ' + weather.name + ', ' + weather.sys.country}"></h4>
+                    <h4 class="card-title"
+                        th:text="${'Current weather for ' + weather.name + ', ' + weather.sys.country}"></h4>
                     <img
                             style="display: inline-block"
                             th:src="${'http://openweathermap.org/img/wn/' + weather.weather.get(0).icon + '@2x.png'}" alt="weather-icon">
@@ -33,7 +34,7 @@
                                 <p th:text="${weather.main.humidity} + ' %'"></p>
                             </td>
                         </tr>
-                        <tr class="table-active">
+                        <tr class="table-light">
                             <th>Pressure</th>
                             <td>
                                 <p th:text="${weather.main.pressure} + ' hpa'"></p>
@@ -46,7 +47,7 @@
                      + weather.wind.getDegree(weather.wind.deg)}"></p>
                             </td>
                         </tr>
-                        <tr class="table-active">
+                        <tr class="table-light">
                             <th>Sunrise</th>
                             <td>
                                 <p th:text="${weather.sys.sunrise}"></p>
@@ -58,7 +59,7 @@
                                 <p th:text="${weather.sys.sunset}"></p>
                             </td>
                         </tr>
-                        <tr class="table-active">
+                        <tr class="table-light">
                             <th>Geo Coords</th>
                             <td>
                                 <p th:text="${weather.coords}"></p>
@@ -70,8 +71,18 @@
                 </div>
                 </div>
             </div>
+        <div>
+            <form th:action="@{/current}" method="get">
+                <button on-click="style.display='none'" type="submit"
+                        class="my-btn2 btn btn-secondary btn-lg pull-right">View 4
+                    day
+                    forecast for
+                    city</button>
+            </form>
+        </div>
         </div>
     </div>
+
 
 
 </body>

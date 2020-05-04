@@ -13,9 +13,12 @@
 <div class="jumbotron text-center">
     <h1 class="display-4">Welcome to my weather app</h1>
 <form th:action="@{/current}" method="post">
-    <label for="city">Indtast bynavn</label>
-    <input id="city" type="text" name="city">
-    <button type="submit">Se vejrudsigt for by</button>
+    <div class="form-group row justify-content-center input-group mb-3">
+    <label for="city" class="col-form-label-lg"></label>
+    <input class="form-rounded" id="city" type="text" name="city"
+           placeholder="Enter name of city">
+    <button type="submit" class="my-btn btn btn-light btn-lg active">See weather forecast</button>
+    </div>
 </form>
 </div>
 </body>
