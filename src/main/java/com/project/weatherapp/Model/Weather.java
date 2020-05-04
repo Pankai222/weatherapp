@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Weather {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private int id2;
     private String description;

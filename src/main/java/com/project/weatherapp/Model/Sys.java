@@ -10,7 +10,7 @@ import java.time.Instant;
 public class Sys {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private int type;
     private int id2;

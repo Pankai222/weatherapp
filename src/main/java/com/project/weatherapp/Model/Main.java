@@ -14,7 +14,7 @@ import java.math.RoundingMode;
 public class Main {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private double temp;
     private double feels_like;

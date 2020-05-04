@@ -8,7 +8,7 @@ import java.util.List;
 public class WeatherReport {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.TABLE)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     @OneToOne(cascade=CascadeType.ALL)
     private Coord coords;
