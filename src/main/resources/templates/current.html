@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WeatherReport</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body>
+
+<div class="col-lg-9">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-200">
+                <div class="card-body">
+                    <h4 class="card-title" th:text="${'Current weather for ' + weather.name + ', ' + weather.sys.country}"></h4>
+                    <img
+                            style="display: inline-block"
+                            th:src="${'http://openweathermap.org/img/wn/' + weather.weather.get(0).icon + '@2x.png'}" alt="weather-icon">
+                    <h5 th:text="${weather.main.prettyFloat(weather.main.temp) + ' °C'}"></h5>
+                    <p class="card-text" th:text="${weather.weather.get(0).description}"></p>
+                    <p class="card-text"
+                       th:text="${#dates.format(#dates.createNow(), 'h:mm a, MMM d')}"></p>
+                </div>
+                <div class="card-footer">
+                    <table class="table table-bordered table-sm">
+                        <tbody>
+                        <tr class="table-active">
+                            <th>Humidity</th>
+                            <td>
+                                <!--/*@thymesVar id="weatherRep" type="com.project.weatherapp.Controller.HomeController"*/-->
+                                <p th:text="${weather.main.humidity} + ' %'"></p>
+                            </td>
+                        </tr>
+                        <tr class="table-active">
+                            <th>Pressure</th>
+                            <td>
+                                <p th:text="${weather.main.pressure} + ' hpa'"></p>
+                            </td>
+                        </tr>
+                        <tr class="table-active">
+                            <th>Wind</th>
+                            <td>
+                                <p th:text="${weather.wind.getDescription(weather.wind.speed) + ', ' + weather.wind.speed + 'm/s' + ', '
+                     + weather.wind.getDegree(weather.wind.deg)}"></p>
+                            </td>
+                        </tr>
+                        <tr class="table-active">
+                            <th>Sunrise</th>
+                            <td>
+                                <p th:text="${weather.sys.sunrise}"></p>
+                            </td>
+                        </tr>
+                        <tr class="table-active">
+                            <th>Sunset</th>
+                            <td>
+                                <p th:text="${weather.sys.sunset}"></p>
+                            </td>
+                        </tr>
+                        <tr class="table-active">
+                            <th>Geo Coords</th>
+                            <td>
+                                <p th:text="${weather.coords}"></p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

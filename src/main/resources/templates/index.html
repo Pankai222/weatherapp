@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ChooseCity</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+
+
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to my weather app</h1>
+<form th:action="@{/current}" method="post">
+    <label for="city">Indtast bynavn</label>
+    <input id="city" type="text" name="city">
+    <button type="submit">Se vejrudsigt for by</button>
+</form>
+</div>
+</body>
+</html>

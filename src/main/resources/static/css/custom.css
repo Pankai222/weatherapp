@@ -1,0 +1,24 @@
+.jumbotron {
+    background: url("../img/sky-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0
+
+}
+
+body {
+    background: url("../img/sky-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.card {
+    margin-top: 5%;
+    margin-bottom: 5%
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.card-body {
+    padding-bottom: 2%
+}
