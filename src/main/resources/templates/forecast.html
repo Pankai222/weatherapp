@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Forecast</title>
 </head>
 <body>
 
+<table>
+    <tr>
+        <th>Humidity</th>
+        <th>Pressure</th>
+        <th>Sunrise</th>
+        <th>Sunset</th>
+    </tr>
+    <tr th:each="weather : ${forecast}">
+        <td th:text="${weather.main.humidity}"></td>
+        <td th:text="${weather.main.pressure}"></td>
+        <td th:text="${weather.sys.sunrise}"></td>
+        <td th:text="${weather.sys.sunset}"></td>
+    </tr>
+</table>
 </body>
 </html>

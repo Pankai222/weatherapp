@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.ArrayList;
 
 @Entity
 public class WeatherForecast {
@@ -12,13 +11,16 @@ public class WeatherForecast {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private ArrayList<WeatherReport> weatherReport;
+    private WeatherReport[] weatherReports;
 
-    public ArrayList<WeatherReport> getWeatherReport() {
-        return weatherReport;
+    public WeatherForecast() {
+        weatherReports = new WeatherReport[40];
+    }
+    public WeatherReport[] getWeatherReport() {
+        return weatherReports;
     }
 
-    public void setWeatherReport(ArrayList<WeatherReport> weatherReport) {
-        this.weatherReport = weatherReport;
+    public void setWeatherReport(WeatherReport[] weatherReports) {
+        this.weatherReports = weatherReports;
     }
 }
